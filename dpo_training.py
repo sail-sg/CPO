@@ -2,7 +2,6 @@
 import os
 from dataclasses import dataclass, field
 from typing import Dict, Optional
-os.environ["WANDB_API_KEY"] ='89e455c07e1d743bcbd04e3aece059016dc87cfc'
 import torch
 from datasets import Dataset, load_dataset
 from peft import LoraConfig

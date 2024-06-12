@@ -66,21 +66,6 @@ def create_demo_text(cot_flag=True):
         z.append("Step 1, Jason started with 20 lollipops. Then he had 12 after giving some to Denny. Step 2, So he gave Denny 20 - 12 = 8.")
         y.append("8")        
 
-        x.append("Shawn has five toys. For Christmas, he got two toys each from his mom and dad. How many toys does he have now?")
-        z.append("Step 1, Shawn started with 5 toys. Step 2, If he got 2 toys each from his mom and dad, then that is 4 more toys. Step 3, So he has 5 + 4 = 9 toys")
-        y.append("9")        
-
-        x.append("There were nine computers in the server room. Five more computers were installed each day, from monday to thursday. How many computers are now in the server room?")
-        z.append("Step 1, There were originally 9 computers. Step 2, For each of 4 days, 5 more computers were added, so 5 * 4 = 20 computers were added. Step 3, 9 + 20 is 29.")
-        y.append("29")        
-
-        x.append("Michael had 58 golf balls. On tuesday, he lost 23 golf balls. On wednesday, he lost 2 more. How many golf balls did he have at the end of wednesday?")
-        z.append("Step 1, Michael started with 58 golf balls. Step 2, After losing 23 on tuesday, he had 58 - 23 = 35. Step 3, After losing 2 more, he had 35 - 2 = 33 golf balls.")
-        y.append("33")        
-
-        x.append("Olivia has $23. She bought five bagels for $3 each. How much money does she have left?")
-        z.append("Step 1, Olivia had 23 dollars. Step 2, 5 bagels for 3 dollars each will be 5 x 3 = 15 dollars. Step 3, So she has 23 - 15 = 8 dollars left.")
-        y.append("8")
     
     else:
         raise ValueError("dataset is not properly defined ...")
@@ -105,34 +90,7 @@ def create_demo_text(cot_flag=True):
                          direct_answer_trigger_for_fewshot + " " + y[i] + ".\n\n"
     
     return demo_text
-# math_evaluate = '''Evaluate whether the thought helps in partially or directly answering the original question (likely/impossible). 
 
-# Question: Janet's ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?
-# Thought: step 1, 16 eggs per day means 16 * 24 hours = 384 eggs per day. 
-# Evaluation Process: It multiplies 16 eggs per day by 24 hours, resulting in 384 eggs per day. The actual statement clearly says Janet's ducks lay 16 eggs per day in total, not per hour. 
-# Impossible
-
-# Question: Two trains leave San Rafael at the same time. They begin traveling westward, both traveling for 80 miles. The next day, they travel northwards, covering 150 miles. What's the distance covered by each train in the two days
-# Thought: step 1, 80 miles was covered in one day, and 150 miles was covered in another day.
-# Evaluation Process: the thought is correct and aligns with the question's details. Although it cannot directly answer the question, this is very helpful in promoting the next step towards the correct reasoning.
-# Likely
-
-# Question: Toulouse has twice as many sheep as Charleston. Charleston has 4 times as many sheep as Seattle. How many sheep do Toulouse, Charleston, and Seattle have together if Seattle has 20 sheep?
-# Thought: step 1, 2x as many means that toulouse has 2x as many sheep as charleston. step 2, 4x as many means that charleston has 4x as many sheep as seattle. step 3, 2(2x) = 4x means that toulouse has 4x as many sheep as charleston.
-# Evaluation Process: The thought process makes a critical error in step 3 by stating "2(2x) = 4x means that Toulouse has 4x as many sheep as Charleston." This is incorrect. The initial information that Toulouse has twice as many sheep as Charleston is accurate and should remain the basis for calculation. The error seems to be in misunderstanding the multiplication of relationships. 
-# Impossible
-
-# Question: Mary is baking a cake. The recipe calls for 6 cups of flour 8 cups of sugar and 7 cups of salt. She already put in 5 cups of flour.How many more cups of sugar than cups of salt does she need to add now?
-# Thought: step 1, 6 cups of flour + 8 cups of sugar + 7 cups of salt = 21 cups. 
-# Evaluation Process: The given thought for evaluating the question about Mary baking a cake is not helpful for answering the question because it focuses on summing up the total amount of ingredients needed for the cake, which does not directly address the specific question asked. The question is specifically about the difference in the number of cups of sugar versus cups of salt Mary needs to add now, given that she already added 5 cups of flour. 
-# Impossible
-
-# Question: A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?
-# Thought: Step 1, 2 bolts of blue fiber and half that much white fiber means 2/2 + 1/2 = 3. 
-# Evaluation Process: It correctly identifies that if the robe requires 2 bolts of blue fiber and half that amount of white fiber, then the total amount of white fiber needed is half of 2 bolts, which is 1 bolt. By adding the 2 bolts of blue fiber to the 1 bolt of white fiber, it correctly calculates that a total of 3 bolts of fiber are needed to make the robe. This thought process directly addresses the question by accurately calculating the total number of bolts required for the robe.
-# Likely
-
-# '''
 math_evaluate = '''Evaluate whether the thought helps in partially or directly answering the original question (likely/impossible). 
 
 Question: Janet's ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?

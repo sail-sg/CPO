@@ -16,11 +16,35 @@ pip install -r requirement.txt
 
 ## Quick Start
 
+We show examples of one task. By simply changing the task's name, the approach can be applied to other tasks.
+
 ### Data Collection via ToT
+
+1. Selecting reasoning path via ToT.
+
+```
+accelerate launch run_test.py --task bamboogle --method_generate sample --method_evaluate value --method_select greedy --n_evaluate_sample 5 --n_generate_sample 15 --n_select_sample 3 --base_model ./model/Llama-2-7b-hf >>logs/bamboogle_7b_tot_test.out
+```
+
+2. Collect paired preference thoughts for optimization.
+
+```
+python clean_dataset.py
+```
 
 ### Training via CPO
 
-### Testing over ToT
+
+```
+accelerate launch dpo_training.py --dataset bam_7b_data.json --wandb_name dpo_7b_bam --base_model ./model/Llama-2-7b-hf --output_dir ./results/results_bam_7b_dpo
+```
+
+### Testing over CoT
+
+```
+accelerate launch run_test.py --task bamboogle --naive_run --method_generate greedy --base_model ./results/results_bam_7b_dpo >>logs/bam_7b_dpo.out
+
+```
 
 ## Reference Repositories
 

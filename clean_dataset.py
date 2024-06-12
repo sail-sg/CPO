@@ -3,30 +3,14 @@ from tot.tasks import get_task
 import random
 from load_data import *
 import re
-# task = get_task('bamboogle')
-# for propose_num in [5, 10, 15]:
-# 	for select_num in [1, 3, 5]:
-# 		path = '2wiki_7b_propose_'+str(propose_num)+'_select_'+str(select_num)
-# 		path = path + '.json'
-# 		file_name = path+'_data.json'
 
-# task = get_task('fever')
-# path = 'feverous_13b_2.json'
-# file_name = 'feverous_13b_2_data.json'
-# final_sentence = 'step 3, so the final answer is: '
-# thought_number = 3
+task = get_task('fever')
+path = 'feverous_13b_2.json'
+file_name = 'feverous_13b_2_data.json'
+final_sentence = 'step 3, so the final answer is: '
+thought_number = 3
 
-# task = get_task('bamboogle')
-# path = 'bam_7b_filtered.json'
-# file_name = 'bam_7b_filtered_data.json'
-# final_sentence = 'step 3, so the final answer is: '
-# thought_number = 3
 
-task = 'math'
-path = 'svamp_m7b.json'
-file_name = 'svamp_m7b_data.json'
-final_sentence = 'step 4, the answer (arabic numerals) is'
-thought_number = 4
 
 final_thought = str(thought_number-1)
 with open(path, 'r') as f:

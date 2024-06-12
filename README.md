@@ -34,9 +34,8 @@ python clean_dataset.py
 
 ### Training via CPO
 
-
 ```
-accelerate launch dpo_training.py --dataset bam_7b_data.json --wandb_name dpo_7b_bam --base_model ./model/Llama-2-7b-hf --output_dir ./results/results_bam_7b_dpo
+accelerate launch dpo_training.py --dataset bam_7b_data.json --wandb_name dpo_7b_bam --base_model ./model/Llama-2-7b-hf --output_dir ./results/results_bam_7b_dpo --data_json_file bamboogle_7b.json --train True 
 ```
 
 ### Testing over CoT

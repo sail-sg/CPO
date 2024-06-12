@@ -4,13 +4,17 @@ import random
 from load_data import *
 import re
 
-task = get_task('fever')
-path = 'feverous_13b_2.json'
-file_name = 'feverous_13b_2_data.json'
+# task = get_task('fever')
+# path = 'feverous_13b_2.json'
+# file_name = 'feverous_13b_2_data.json'
+# final_sentence = 'step 3, so the final answer is: '
+# thought_number = 3
+
+task = get_task('bamboogle')
+path = 'bamboogle_7b.json'
+file_name = 'bamboogle_7b_data.json'
 final_sentence = 'step 3, so the final answer is: '
 thought_number = 3
-
-
 
 final_thought = str(thought_number-1)
 with open(path, 'r') as f:

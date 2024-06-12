@@ -239,6 +239,7 @@ def run(args, load_8bit: bool = False,
         for d in data:
             if args.naive_run:
                 # d is batch_size*instances
+                args.n_generate_sample = 10
                 ys, info = naive_solve(args, task, d, model, tokenizer, device) 
                 out = {}
             else:
@@ -323,6 +324,7 @@ def run(args, load_8bit: bool = False,
                 if str(d) in q_list:
                     continue
             if args.naive_run:
+                args.n_generate_sample = 10
                 ys, info = naive_solve(args, task_prompt, d['question'][0], model, tokenizer, device) 
                 out = {}
             else:

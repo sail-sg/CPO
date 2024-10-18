@@ -55,11 +55,10 @@ accelerate launch run_test.py --task bamboogle --naive_run --method_generate gre
 If you find CPO helpful or intriguing and decide to use it, kindly acknowledge the paper by citing it and consider starring this repo, thanks!
 
 ```bibtex
-@misc{zhang2024chain,
-      title={Chain of Preference Optimization: Improving Chain-of-Thought Reasoning in LLMs}, 
-      author={Xuan Zhang and Chao Du and Tianyu Pang and Qian Liu and Wei Gao and Min Lin},
-      year={2024},
-      eprint={2406.09136},
-      archivePrefix={arXiv},
-     }
+@article{zhang2024chain,
+  title={Chain of Preference Optimization: Improving Chain-of-Thought Reasoning in LLMs},
+  author={Zhang, Xuan and Du, Chao and Pang, Tianyu and Liu, Qian and Gao, Wei and Lin, Min},
+  journal={arXiv preprint arXiv:2406.09136},
+  year={2024}
+}
 }

@@ -17,7 +17,7 @@ final_sentence = 'step 3, so the final answer is: '
 thought_number = 3
 
 final_thought = str(thought_number-1)
-with open(path, 'r') as f:
+with open(path, 'r', 'utf-8') as f:
 	instances = json.load(f)
 Corpus = {}
 for instance in instances:
@@ -227,6 +227,6 @@ for instance in Corpus:
 
 print(len(paired_data))
 
-with open(file_name,'w') as f:
+with open(file_name,'w','utf-8') as f:
 	f.write(json.dumps(paired_data,ensure_ascii=False,indent=4))
 
